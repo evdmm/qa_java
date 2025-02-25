@@ -9,11 +9,19 @@ import org.mockito.junit.MockitoJUnitRunner;
 
 import java.util.List;
 
+import static org.junit.Assert.assertThrows;
+
 @RunWith(MockitoJUnitRunner.class)
 public class LionTest {
 
     @Mock
     Feline feline;
+
+    @Test
+    public void createLionException() {
+        Exception exception = assertThrows(Exception.class, () -> new Lion("Неизвестный"));
+        Assert.assertEquals("Используйте допустимые значения пола животного - самец или самка", exception.getMessage());
+    }
 
     @Test
     public void getKittensSuccess() {
