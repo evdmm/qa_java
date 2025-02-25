@@ -15,8 +15,6 @@ public class LionTest {
     @Mock
     Feline feline;
 
-//    Lion lion = new Lion(feline);
-
     @Test
     public void getKittensSuccess() {
         Lion lion = new Lion(feline);
